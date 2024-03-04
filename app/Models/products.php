@@ -17,4 +17,14 @@ class products extends Model
         'part_id',
         'brand_id',
     ];
+
+
+    public function product(){
+        return $this->hasMany(Products::class, 'part_id', 'product_id');
+    }
+    //return $this->hasMany(Task::class, 'task_range_id', 'task_range_id');   }
+
+    public function winnings(){
+        return $this->hasMany(winnings::class, 'product_id', 'product_id');
+    }
 }

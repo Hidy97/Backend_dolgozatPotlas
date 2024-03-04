@@ -24,6 +24,8 @@ return new class extends Migration
         products::create(['product_id' => 2, 'name' => 'Orrszőrnyíró', 'part_id' => 2, 'brand_id' => 2]);
     }
 
+
+    
     /**
      * Reverse the migrations.
      */

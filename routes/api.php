@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PartsController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WinningController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +28,13 @@ Route::post('parts', [PartsController::class , 'store']);
 
 Route::put('parts/{id}', [PartsController::class , 'update']);
 Route::delete('parts/{id}', [PartsController::class , 'destroy']);
+
+
+Route::get('winnings', [WinningController::class ,'index']);
+
+Route::middleware('auth.basic')->group(function () {
+    //bejelentkezett felhaszn
+    Route::get('felhasznalo_nyeremenyek', [WinningController::class, 'felhasznaloNyeremenyek']);    
+});
+
+Route::get('termek_osszes_gyozelem/{id}', [ProductController::class, 'termekOsszesGyozelem']);

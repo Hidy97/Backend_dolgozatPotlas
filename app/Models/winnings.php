@@ -16,7 +16,6 @@ class winnings extends Model
             ->where('brand_id', '=', $this->getAttribute('brand_id'))
             ->where('part_id', '=', $this->getAttribute('part_id'));
 
-
         return $query;
     }
 
@@ -27,4 +26,6 @@ class winnings extends Model
         'product_id',
         'date',
     ];
+
+   
 }

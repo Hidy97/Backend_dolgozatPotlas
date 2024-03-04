@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('member');
+            //1.c
+            $table->integer('quantity')->default(0);
             $table->timestamps();
         });
 
